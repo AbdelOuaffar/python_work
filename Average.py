@@ -8,3 +8,4 @@ list= [1,2,3,4,5,6]
 Result= Average(list)
 print(Result,"is the average of the numbers in the list ",list)
 
+print("hello")
