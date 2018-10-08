@@ -33,5 +33,5 @@ print(result)
 testCase2 = "word                          word"
 result = getUinqueWords(testCase2)
 print(result)
-Print("This is all")
+print("This is all")
 
