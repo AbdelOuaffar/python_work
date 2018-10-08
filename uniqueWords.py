@@ -1,37 +1,48 @@
+def fragment_text(text):
+    listOfWords =[]
+    collectorOfChar = ""
+    for char in text :
+          if char != " ":
+            collectorOfChar += char
+          else :
+           listOfWords.append(collectorOfChar)
+           collectorOfChar= ""
+    return listOfWords
 
-def getWords(text):
-    words = []
-    currentWord = ""
-    for char in text:
-        if char == " ":
-            words.append(currentWord)
-            currentWord = ""
-        else:
-            currentWord += char
-    words.append(currentWord)
-    return words
+def eliminateSpace(text):
 
+    result1=[]
+    for index in range(0,len(result)):
+        if result[index]!= "":
+            result1.append(result[index])
+    return result1
+def UniqueWords( nonSpaceSentence):
+    finalsentencelist = []
+    for index in range(0,len(nonSpaceSentence)) :
+        if  nonSpaceSentence[index] not in finalsentencelist:
+            finalsentencelist.append(nonSpaceSentence[index])
 
-def getUinqueWords(sentence):
-    uniqueWords = []
-    words = getWords(sentence)
-    for word in words:
-        if word in uniqueWords:
-            continue
-        uniqueWords.append(word)
-    return uniqueWords
+    return finalsentencelist
+def writeSentence ( sentence):
+    script=""
+    for element in sentence :
+        script += element + " "
 
+    return script
 
-testCase1 = "common is a word used to common to word to express similarities"
-result = getUinqueWords(testCase1)
+text = " you are the one   the      one    one    you  "
+
+result = fragment_text(text)
+nonSpaceSentence = eliminateSpace(result)
+finalresult = UniqueWords(nonSpaceSentence)
 print(result)
+print(nonSpaceSentence)
+print(finalresult)
+writeCorrectSentence = writeSentence(finalresult)
+print(writeCorrectSentence)
 
-testCase2 = "word word word word word"
-result = getUinqueWords(testCase2)
-print(result)
 
-testCase2 = "word                          word"
-result = getUinqueWords(testCase2)
-print(result)
-print("This is all")
+
+
+
 
