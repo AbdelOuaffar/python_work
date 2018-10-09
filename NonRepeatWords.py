@@ -30,7 +30,7 @@ def writeSentence ( sentence):
 
     return script
 
-text = " you are the one   the      one    one    you  "
+text = " you are the one   the      34444 one    one    you  "
 
 result = fragment_text(text)
 nonSpaceSentence = eliminateSpace(result)
