@@ -3,7 +3,7 @@ def     word_count(sentence):
             for letter in sentence:
                 if letter ==" ":
                     i+=1
-            return i+ 1
+            return
 text= input("enter a phrase   :")
 Result= word_count(text)
 print(Result,"is the number of words in your phrase")
