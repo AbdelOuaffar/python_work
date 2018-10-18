@@ -1,0 +1,3 @@
+EmployeesId:     FirstName:     lastName:       Salary:
+1                   Abdo            Ali             50000.00
+2                   Mike            Gleason        100,000.00
