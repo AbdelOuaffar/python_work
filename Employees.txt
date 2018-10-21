@@ -1,0 +1,11 @@
+EmployeesId:     FirstName:     lastName:       Salary:
+1                   Abdo            Ali          50000.07
+2                   Mike            Gleason        100 000.00
+3                  Mohamad            Ajam              120000.00
+5                   Hakim             sanhaji            75000.003
+
+
+
+3                  Mohamad            Ajam              120 000.0 
+3                  Mohamad            Ajam              120 000.0 
+3                  Mohamad            Ajam              120 000.0 

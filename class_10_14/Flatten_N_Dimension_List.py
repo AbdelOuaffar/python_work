@@ -1,4 +1,4 @@
-def     Racket_one(list):
+def Racket_one(list):
     W1=[]
     for item  in list:
         if type(item)==type(list):
