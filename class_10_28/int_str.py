@@ -9,7 +9,7 @@ def int_str(st):
         for key in str_int_dic:
             #if key == st[len(st)-i]:
             if key == char:
-                integer += v*str_int_dic[key]
+                integer +=  v*str_int_dic[key]
                 add += str_int_dic[key]
                 i += 1
                 v *= 10

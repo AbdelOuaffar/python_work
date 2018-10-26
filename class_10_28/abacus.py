@@ -8,7 +8,7 @@ def abacus(st_int):
     while i <= len(st_int):
 
         var = st_int[len(st_int) - i]
-        print(f"{v}z:  {var}")
+        print(f"{v}z: {var}")
         i += 1
         v *= 10
 try:
