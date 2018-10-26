@@ -1,6 +1,6 @@
 import sys
 
-git stat
+import sys
 def str_to_int(str):
     multiplier = 1
     for char in reversed(str):
