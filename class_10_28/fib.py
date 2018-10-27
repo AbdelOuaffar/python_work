@@ -8,24 +8,22 @@ def fib(n):
         b = x
         x = a + b
     return x
-def __main__():
+def _main_():
 
-        if len(sys.argv) < 2:
-             print("enter an argument")
-             return
-        try:
-          n = int(sys.argv[1])
-          if n >= 0:
-                result = fib(n)
-          elif n < 0:
-                result = - fib(-n)
-          print(result)
-        except ValueError:
-
-                print("check if your input is numeric")
-        finally:
-            print("EOScript")
-__main__()
+        if len(sys.argv) == 3:
+            try:
+             if sys.argv[1] == "fib":
+                 n = int(sys.argv[2])
+                 if n >= 0:
+                      result = fib(n)
+                 elif n < 0:
+                      result = - fib(-n)
+                 print(result)
+            except ValueError:
+                 print("check if your input is numeric")
+            finally:
+                   print("EOScript")
+_main_()
 
 
 
@@ -33,13 +31,3 @@ __main__()
 
 
 
-
-
-#n = int(input("enter a number: "))
-#if n >= 0:
- #result = fib(n)
-# print(f"fib({n})= {result} ")
-#else:
-   # m = -n
-    #result = -fib(m)
-   # print(f"fib({n})= {result} ")
