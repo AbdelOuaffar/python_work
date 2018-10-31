@@ -16,26 +16,25 @@ def bills_denominations(amount):
         amount = r
         if bill != 0:
           print(bill, key)
-amount = sys.argv[1]
-Amount = float(amount)
-z = int(((Amount-int(Amount))+0.001) * 100)
-bills_denominations(int(Amount))
-coins_denominations(z)
-
-# note:  same code, in the first version that was submitted it gives correct output
-# when I use sys.argv the coding give different results!!!!!!!!!!!!!!
-
-#(venv) C:\Users\PC\python_work\November_04>money_denominat.py 123.45
-#(24, 'fives')
-#(3, 'ones')
-#(9, 'nickles')
-
-#(venv) C:\Users\PC\python_work\November_04>money_denominat.py 2345.67
-#(469, 'fives')
-#(13, 'nickles')
-#(2, 'pennies')
+def main():
+    amount = sys.argv[1]
+    Amount = float(amount)
+    z = int(((Amount-int(Amount))+0.001) * 100)
+    bills_denominations(int(Amount))
+    coins_denominations(z)
+if __name__== "__main__":
+    main()
 
 
+(venv) C:\Users\PC\python_work\November_04>money_denominat.py 123
+(24, 'fives')
+(3, 'ones')
+
+(venv) C:\Users\PC\python_work\November_04>money_denominat.py 123.99
+(24, 'fives')
+(3, 'ones')
+(19, 'nickles')
+(4, 'pennies')
 
 
 
