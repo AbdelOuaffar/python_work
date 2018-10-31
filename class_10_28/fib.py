@@ -8,7 +8,7 @@ def fib(n):
         b = x
         x = a + b
     return x
-def _main_():
+def main():
 
         if len(sys.argv) == 3:
             try:
@@ -23,7 +23,7 @@ def _main_():
                  print("check if your input is numeric")
             finally:
                    print("EOScript")
-_main_()
+main()
 
 
 

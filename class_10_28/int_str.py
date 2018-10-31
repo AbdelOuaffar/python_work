@@ -13,8 +13,9 @@ def int_str(st):
                 add += str_int_dic[key]
                 i += 1
                 v *= 10
-    return add, "sum of all the digits of the input ", integer, "is the integer type of the input", type(integer)
+    return  integer
 string = input("enter a string composed only with integers:")
+
 result = int_str(string)
 print(result)
 
