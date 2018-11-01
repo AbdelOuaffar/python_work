@@ -30,28 +30,15 @@ def main():
 
                 char_seq2 = char_seq1
                 char_seq1 = ""
+            elif type(int(char)) != type(0):
+                print("incompatible entry")
 
         bills_denominations(int(char_seq2))
         coins_denominations(int(char_seq1))
-    except TypeError:
-        print("type error")
+
+    except ValueError:
+        print("your entry contain other than numbers")#, file=sys.stdin)
+    finally:
+        print("end of script")
 if __name__== "__main__":
     main()
-
-#(venv) C:\Users\PC\python_work\November_04>money_denominat.py 234.99
-#(46, 'fives')
-#(4, 'ones')
-#(19, 'nickles')
-#(4, 'pennies')
-
-
-
-
-
-
-
-
-
-
-
-
