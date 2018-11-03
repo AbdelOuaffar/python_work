@@ -1,0 +1,6 @@
+FirstName, LastName, DateOfBirth
+Ibrahim, Arabi, 8/11/1997
+Raj, Gharib, 12/02/2000
+zak, Aymen, 3/09/1999
+Rabha, Ismail, 5/23/2005
+Bachir, Omar, 6/15/2002
