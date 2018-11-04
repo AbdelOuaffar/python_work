@@ -2,8 +2,8 @@ from datetime import datetime
 import sys
 import parser
 
-def index_line_file():
-        with open('C:/Users/PC/python_work/November_04/Junior_student.txt', 'r') as f:
+def index_line_file(file):
+        with open(file, 'r') as f:
             header = f.readline()
             student_junior = []
 
@@ -16,8 +16,8 @@ def index_line_file():
 
             f.close()
             return student_junior
-def list_index():
-        with open('C:/Users/PC/python_work/November_04/Junior_student.txt', 'r') as f:
+def list_index(file):
+        with open(file, 'r') as f:
             header = f.readline()
 
             list_birth = []
@@ -36,8 +36,8 @@ def sort_file_by_field(list_field,student_junior):
                     print(student[0:3])
 
 
-def index_by_first_name():
-    with open('C:/Users/PC/python_work/November_04/Junior_student.txt', 'r') as f:
+def index_by_first_name(file):
+    with open(file, 'r') as f:
             header = f.readline()
 
             list_first_names = []
@@ -46,8 +46,8 @@ def index_by_first_name():
                 list_first_names.append(student[0])
             f.close()
             return list_first_names
-def index_by_Last_name():
-    with open('C:/Users/PC/python_work/November_04/Junior_student.txt', 'r') as f:
+def index_by_Last_name(file):
+    with open(file, 'r') as f:
             header = f.readline()
             list_last_names = []
             for line in f:
@@ -56,9 +56,9 @@ def index_by_Last_name():
             f.close()
             return list_last_names
 
-def student_list():
+def student_list(file):
 
-    with open('C:/Users/PC/python_work/November_04/Junior_student.txt', 'r') as f:
+    with open(file, 'r') as f:
             header = f.readline()
 
             list_student_list = []
@@ -69,17 +69,17 @@ def student_list():
             return list_student_list
 
 
-def sort_f_name():
-    list = student_list()
-    first = sorted(index_by_first_name())
+def sort_f_name(file):
+    list = student_list(file)
+    first = sorted(index_by_first_name(file))
     for name in first:
         for student in list:
             if name == student[0]:
                 print(student)
 
-def sort_l_name():
-    list = student_list()
-    last = sorted(index_by_Last_name())
+def sort_l_name(file):
+    list = student_list(file)
+    last = sorted(index_by_Last_name(file))
     for name in last:
         for student in list:
             if name == student[1]:
@@ -88,15 +88,16 @@ def sort_l_name():
 
 def main():
     try:
-        if sys.argv[1] == "DateOfBirth":
-            list_birth = list_index()
-            student_tag = index_line_file()
-            sort_file_by_field(list_birth, student_tag)
-        elif sys.argv[1] == "FirstName" :
-            print(sort_f_name())
 
-        elif sys.argv[1] == "LastName":
-            print(sort_l_name())
+        if sys.argv[2] == "DateOfBirth":
+            list_birth = list_index(sys.argv[1])
+            student_tag = index_line_file(sys.argv[1])
+            sort_file_by_field(list_birth, student_tag)
+        elif sys.argv[2] == "FirstName":
+            print(sort_f_name(sys.argv[1]))
+
+        elif sys.argv[2] == "LastName":
+            print(sort_l_name(sys.argv[1]))
         else:
             print("Name error ,name field is case sensitive")
 
@@ -109,6 +110,28 @@ if  __name__ == "__main__":
 
 
 
+(venv) C:\Users\PC\python_work\November_04>sort_student_file.py student.txt DateOfBirth
+['Ibrahim,', 'Arabi,', '8/11/1997']
+['zak,', 'Aymen,', '3/09/1999']
+['Raj,', 'Gharib,', '12/02/2000']
+['Bachir,', 'Omar,', '6/15/2002']
+['Rabha,', 'Ismail,', '5/23/2005']
+
+(venv) C:\Users\PC\python_work\November_04>sort_student_file.py student.txt FirstName
+['Bachir,', 'Omar,', '6/15/2002']
+['Ibrahim,', 'Arabi,', '8/11/1997']
+['Rabha,', 'Ismail,', '5/23/2005']
+['Raj,', 'Gharib,', '12/02/2000']
+['zak,', 'Aymen,', '3/09/1999']
+None
+
+(venv) C:\Users\PC\python_work\November_04>sort_student_file.py student.txt LastName
+['Ibrahim,', 'Arabi,', '8/11/1997']
+['zak,', 'Aymen,', '3/09/1999']
+['Raj,', 'Gharib,', '12/02/2000']
+['Rabha,', 'Ismail,', '5/23/2005']
+['Bachir,', 'Omar,', '6/15/2002']
+None
 
 #(venv) C:\Users\PC\python_work\November_04>sort_student_file.py DateOfBirth
 #['Ibrahim,', 'Arabi,', '8/11/1997']
