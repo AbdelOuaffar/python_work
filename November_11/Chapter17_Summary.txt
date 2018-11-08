@@ -1,0 +1,16 @@
+    Python scopes;places where variables are defined and looked up, help prevent name clashes across the program(code).
+they determine the limit of visibility in the module.
+in the module, names are born at assignment, and the namespace(living space) is determined at the birth of a name.
+    Important rule: assigned names are local(invisible to the outer world), unless they are declared global or nonlocal
+meaning, names assigned inside a function , are proper to that function,they are sheltered,unseen by the global world
+example: k= 90      # global
+         def  sum():
+            k=70     #  local
+
+    the scope search of a name in python goes, first looks at local assignment,then passes to enclosing def ,then global,finally
+checks if the name is a builtins(exple:  sum, round,...etc). if not found an exception error is raised.
+it is crucial to know that if you use a builtin name in your code as a variable you won't be able to use it as a builtin
+function,because builtins are last in the scope of search.search will stop at the assignment of the name.
+    class, an object are skipped in the scope of search.
+
+
