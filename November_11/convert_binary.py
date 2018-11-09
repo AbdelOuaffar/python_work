@@ -21,3 +21,9 @@ if __name__=="__main__":
     main()
 
 
+#enter a binary number>? 1000
+#decimal number of 1000 = 8
+
+
+#enter a binary number>? 10001
+#decimal number of 10001 = 17

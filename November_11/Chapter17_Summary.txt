@@ -7,10 +7,13 @@ example: k= 90      # global
          def  sum():
             k=70     #  local
 
-    the scope search of a name in python goes, first looks at local assignment,then passes to enclosing def ,then global,finally
+    the scope search of a name in python goes, first looks at local assignment,then passes to enclosing defs ,then global,finally
 checks if the name is a builtins(exple:  sum, round,...etc). if not found an exception error is raised.
 it is crucial to know that if you use a builtin name in your code as a variable you won't be able to use it as a builtin
 function,because builtins are last in the scope of search.search will stop at the assignment of the name.
-    class, an object are skipped in the scope of search.
+enclosing defs: nested def, present many layers of look ups(enhanced non local statement).
+Within the corps of the class the LEGB rule is used to localise namespace of a name. but within the module, a class skips
+the LEGB rule scope lookups because the names are fetched as object attributes.
+
 
 
