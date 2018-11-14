@@ -16,7 +16,7 @@ class Student:
         return date(int(tokens[0]), int(tokens[1]), int(tokens[2]))
 
 
-def read_students_file (filename):
+def read_students_file(filename):
     file = open(filename, "r")
     file.readline()  # skipping the first line by reading it
     students = []
@@ -24,32 +24,40 @@ def read_students_file (filename):
     for line in file:  # iterate over all the line
         student = create_student_from_line(line)
         students.append(student)  # now we have all items in the file in a list_of_words
-
     file.close()
     return students
 
 def create_student_from_line(line):
     tokens = line.split(",")
     student = Student(tokens[0], tokens[1], tokens[2])
-    return  student
+    return student
 
-def sorting_by_key(LastName, final):
-    final.sort(key=it(LastName))  # print the whole list of dic(of students) sorted by the key gaven
+def sorting_by_key(Name, final):
+    final.sort(key=it(Name))  # print the whole list of dic(of students) sorted by the key gaven
     return final
-
+def search(students, search):
+        group = []
+        for student in students:
+            if search in student.lastname:
+                group.append(student.lastname)
+            if search in student.firstname:
+                group.append(student.firstname)
+        return group
 def main():
-    if len(sys.argv) < 3:
-        print("Pass a file name and a sorting key for example (student_data.txt FirstName)")
-        return
     try:
-        file_name = sys.argv[1]
-        sorting_key = sys.argv[2]
+
+        file_name = 'student_data.txt'
+        sorting_key = input('enter birthdate or lastname or firstname :')
         students = read_students_file(file_name)
         students.sort(key=attrgetter(sorting_key))
         for student in students:
             student.print()
+        name_char = input("enter your search: ")
+        while name_char != "q":
+            group_result = search(students, name_char)
+            print(group_result)
+            name_char = input('enter your  search ( q to quit):')
         return
-
     except KeyError:
         print(f"{sorting_key} is not a valid Entry the key has to be written in one of those ways(FirstName,LastName or DateOfBirth)", file=sys.stderr)
         return
@@ -59,4 +67,15 @@ def main():
 
 if __name__ == '__main__':
     main()
+#enter your search: >? a
+#['Juha', 'Kirra', 'Magas', 'Nira', 'Lima', 'Saleh', 'Saleh', 'Manal']
+#enter your  search ( q to quit):>? m
+#['Lima']
+#enter your  search ( q to quit):>? ma
+#['Lima']
+#enter your  search ( q to quit):>? l
+#['Saleh', 'Ali', 'Saleh', 'Manal']
+#enter your  search ( q to quit):>? ale
+#['Saleh', 'Saleh']
+#enter your  search ( q to quit):>? q
 
