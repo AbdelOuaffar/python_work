@@ -20,4 +20,4 @@ name1 then name2. Fact the search stops once the attribute is  found.
     the order of search for attributes mentioned above give the option of specialization to the subclasses(good way to code for exceptions);
 if we have a class of employee,that have a method give_raise and we have for instance engineers that have different way of compensation.
 we can  create a subclass engineers that contain give_raise method with different formula than general employees.
-    Code reuse is done by import of the desire class or classes from a module to a new model that we are working on.
+   Code reuse is done by import of the desire class or classes from a module to a new model that we are working on.
