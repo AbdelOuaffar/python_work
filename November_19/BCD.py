@@ -16,7 +16,8 @@ def main():
         print(f"GCD({a},{b})={b}")
     elif a != 0 and b == 0:
         print(f"GCD({a},{b})={a}")
-
+    elif a == 0 and b == 0:
+        print("there is none for (0,0)")
     elif a >= b:
         grand_c_d(a, b)
     else:

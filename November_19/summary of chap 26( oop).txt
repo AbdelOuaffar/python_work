@@ -1,0 +1,23 @@
+  class object is the best example of oriented object programing. It is  an effective way of coding because it eliminates redundancy,permit reuse and customisation of codes.
+All these pros are due to the concept of inheritance that class object provides.
+   A class is created by the statement; class  name:
+when this statement is run by a module, a namespace is created .
+A class is simply a unit of codes,includes variables in the form of attributes and definitions called methods.
+the concept of hierarchy  is built by creating superclasses, syntax:
+class name1:
+    ......
+class name2:
+    .......
+class name(name1,name2):
+
+    class name inherits all the attributes and methods from the superclasses name1 and name2
+class name is called a subclass of name1 and name2.(superclasses).
+So far sub class and its superclasses they are just namespaces linked objects.
+Now to create an instance I, we have to call a class(I = name()).
+If we call  the subclass, the instance will inherit all the attributes of the subclass and also those of the superclasses
+the search for attributes goes in this order: in the instance first than in name(subclass),after left to right in super classes
+name1 then name2. Fact the search stops once the attribute is  found.
+    the order of search for attributes mentioned above give the option of specialization to the subclasses(good way to code for exceptions);
+if we have a class of employee,that have a method give_raise and we have for instance engineers that have different way of compensation.
+we can  create a subclass engineers that contain give_raise method with different formula than general employees.
+    Code reuse is done by import of the desire class or classes from a module to a new model that we are working on.
