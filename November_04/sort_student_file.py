@@ -1,16 +1,17 @@
 from datetime import datetime
 import sys
 import parser
+import pandas as pd
 
 def index_line_file(file):
-        with open(file, 'r') as f:
+    with open(file, 'r') as f:
             header = f.readline()
             student_junior = []
 
             for line in f:
-                 student = line.split()
-                 student.append(datetime.strptime(student[2], '%m/%d/%Y'))
-                 student_junior += [student]
+                student = line.split()
+                student.append(datetime.strptime(student[2], '%m/%d/%Y'))
+                student_junior += [student]
 
 
 
@@ -88,6 +89,9 @@ def sort_l_name(file):
 
 def main():
     try:
+        if len(sys.argv) != 3:
+            print("need 3 arguments")
+            return
 
         if sys.argv[2] == "DateOfBirth":
             list_birth = list_index(sys.argv[1])
@@ -99,62 +103,16 @@ def main():
         elif sys.argv[2] == "LastName":
             print(sort_l_name(sys.argv[1]))
         else:
-            print("Name error ,name field is case sensitive")
+            print("Name error ,name field is case sensitive", file=sys.stderr)
 
     except NameError:
         print("Incorrect name field,case sensitive")
 
 
-if  __name__ == "__main__":
-    main()
+if __name__ == "__main__":
+     main()
 
 
-
-(venv) C:\Users\PC\python_work\November_04>sort_student_file.py student.txt DateOfBirth
-['Ibrahim,', 'Arabi,', '8/11/1997']
-['zak,', 'Aymen,', '3/09/1999']
-['Raj,', 'Gharib,', '12/02/2000']
-['Bachir,', 'Omar,', '6/15/2002']
-['Rabha,', 'Ismail,', '5/23/2005']
-
-(venv) C:\Users\PC\python_work\November_04>sort_student_file.py student.txt FirstName
-['Bachir,', 'Omar,', '6/15/2002']
-['Ibrahim,', 'Arabi,', '8/11/1997']
-['Rabha,', 'Ismail,', '5/23/2005']
-['Raj,', 'Gharib,', '12/02/2000']
-['zak,', 'Aymen,', '3/09/1999']
-None
-
-(venv) C:\Users\PC\python_work\November_04>sort_student_file.py student.txt LastName
-['Ibrahim,', 'Arabi,', '8/11/1997']
-['zak,', 'Aymen,', '3/09/1999']
-['Raj,', 'Gharib,', '12/02/2000']
-['Rabha,', 'Ismail,', '5/23/2005']
-['Bachir,', 'Omar,', '6/15/2002']
-None
-
-#(venv) C:\Users\PC\python_work\November_04>sort_student_file.py DateOfBirth
-#['Ibrahim,', 'Arabi,', '8/11/1997']
-#['zak,', 'Aymen,', '3/09/1999']
-#['Raj,', 'Gharib,', '12/02/2000']
-#['Bachir,', 'Omar,', '6/15/2002']
-#['Rabha,', 'Ismail,', '5/23/2005']
-#(venv) C:\Users\PC\python_work\November_04>sort_student_file.py LastName
-#['Ibrahim,', 'Arabi,', '8/11/1997']
-#['zak,', 'Aymen,', '3/09/1999']
-#['Raj,', 'Gharib,', '12/02/2000']
-#['Rabha,', 'Ismail,', '5/23/2005']
-#['Bachir,', 'Omar,', '6/15/2002']
-#None
-
-
-
-#(venv) C:\Users\PC\python_work\November_04>sort_student_file.py FirstName
-#['Bachir,', 'Omar,', '6/15/2002']
-#['Ibrahim,', 'Arabi,', '8/11/1997']
-#['Rabha,', 'Ismail,', '5/23/2005']
-#['Raj,', 'Gharib,', '12/02/2000']
-#['zak,', 'Aymen,', '3/09/1999']
 
 
 

@@ -33,15 +33,3 @@ if __name__=="__main__":
     main()
 
 
-#enter first integer:>? 123
-#enter second integer>? 12
-#GCD(123,12)=3
-
-#enter first integer:>? 120
-#enter second integer>? 12
-#GCD(120,12)=12
-
-#enter first integer:>? 0
-#enter second integer>? 34
-#GCD(0,34)=34
-

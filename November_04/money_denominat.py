@@ -1,5 +1,8 @@
-
 import sys
+import pandas as pd
+
+
+
 def coins_denominations(amount):
     coins = {"quarters": 25, "dimes": 10, "nickles": 5, "pennies": 1}
     for key in coins:
@@ -7,9 +10,10 @@ def coins_denominations(amount):
         k = amount % coins[key]
         amount = k
         if coin != 0:
-           print(coin, key)
-def bills_denominations(amount):
+            print(coin, key)
 
+
+def bills_denominations(amount):
     bills = {"hundreds": 100, "twenties": 20, "tens": 10, "fives": 5, "twos": 2, "ones": 1}
     for key in bills:
         bill = amount // bills[key]
@@ -17,13 +21,17 @@ def bills_denominations(amount):
         amount = r
         if bill != 0:
             print(bill, key)
+
+
 def main():
+    # string = []
     try:
         char_seq1 = ""
         char_seq2 = ""
-        string = sys.argv[1]
-        for char in string:
+        string = key[1]
 
+        print(string)
+        for char in string:
             if char != ".":
                 char_seq1 += char
             elif char == ".":
@@ -37,8 +45,8 @@ def main():
         coins_denominations(int(char_seq1))
 
     except ValueError:
-        print("your entry contain other than numbers")#, file=sys.stdin)
-    finally:
-        print("end of script")
-if __name__== "__main__":
+        print("your entry contain other than numbers")
+
+
+if __name__ == "__main__":
     main()

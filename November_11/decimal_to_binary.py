@@ -1,5 +1,5 @@
 def remainders(decimal):
-    list_remainders=[]
+    list_remainders = []
     quotient = 2
     while quotient != 1:
         quotient = decimal//2
@@ -22,6 +22,7 @@ def main():
     print(f"binary number equivalent to {decimal} ={result}")
 if __name__=="__main__":
     main()
+
 
 #enter a decimal number>? 20
 #binary number equivalent to 20 =10100

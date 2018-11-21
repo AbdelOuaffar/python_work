@@ -57,6 +57,8 @@ def main():
             group_result = search(students, name_char)
             print(group_result)
             name_char = input('enter your  search ( q to quit):')
+            if group_result==[]:
+                print("there is no match." )
         return
     except KeyError:
         print(f"{sorting_key} is not a valid Entry the key has to be written in one of those ways(FirstName,LastName or DateOfBirth)", file=sys.stderr)
