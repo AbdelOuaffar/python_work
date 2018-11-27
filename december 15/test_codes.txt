@@ -1,0 +1,47 @@
+
+C:\Users\PC\Miniconda3\python.exe "C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.4\helpers\pydev\pydevconsole.py" 51548 51549
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['C:\\Users\\PC\\python_work', 'C:/Users/PC/python_work'])
+PyDev console: starting.
+Python 3.7.0 (default, Aug 14 2018, 19:12:50) [MSC v.1900 32 bit (Intel)] on win32
+runfile('C:/Users/PC/python_work/december 15/manage_orders.py', wdir='C:/Users/PC/python_work/december 15')
+enter 1:(to list product by category) or 2:(list all orders for a given product) or 3:(search product by name) or 4:(to see orders between a specific date range) :>? 4
+enter start search date (yy/mm/dd) :>? 17/1/1
+enter end search date as(yy/mm/dd) :>? 17/11/1
+orders between 17/1/1  and  17/11/1 :[('1', ['17/10/16', 'E1', 5]), ('2', ['17/10/18', 'E2', 6]), ('3', ['17/11/01', 'K1', 2]), ('6', ['17/07/01', 'K1', 3])]
+enter 0 to quit>? 4
+enter start search date (yy/mm/dd) :>? 16/1/1
+enter end search date as(yy/mm/dd) :>? 17/7/1
+orders between 16/1/1  and  17/7/1 :[('6', ['17/07/01', 'K1', 3])]
+enter 0 to quit>? 4
+enter start search date (yy/mm/dd) :>? 18/1/2
+enter end search date as(yy/mm/dd) :>? 18/2/2
+orders between 18/1/2  and  18/2/2 :[('4', ['18/01/02', 'K1', 3]), ('5', ['18/02/02', 'E1', 2])]
+enter 0 to quit>? 4
+enter start search date (yy/mm/dd) :>? 18/1/2
+enter end search date as(yy/mm/dd) :>? 18/12/31
+orders between 18/1/2  and  18/12/31 :[('4', ['18/01/02', 'K1', 3]), ('5', ['18/02/02', 'E1', 2])]
+enter 0 to quit>? 1
+Electronic E1 IPad 134.00 45
+Electronic E2 Iphone 650.00 15
+Electronic E3 Television 350.00 5
+kitchen k1 stove 450.00 20
+kitchen k2 microwave 120.00 17
+enter 0 to quit>? 2
+enter product id :>? k1
+enter 0 to quit>? 2
+enter product id :>? E1
+1 ['17/10/16', 'E1', 5]
+5 ['18/02/02', 'E1', 2]
+enter 0 to quit>? 2
+enter product id :>? K1
+3 ['17/11/01', 'K1', 2]
+4 ['18/01/02', 'K1', 3]
+6 ['17/07/01', 'K1', 3]
+enter 0 to quit>? 3
+enter product name  :>? stove
+stove kitchen 450.00 20
+enter 0 to quit>? 3
+enter product name  :>? IPad
+IPad Electronic 134.00 45
+enter 0 to quit
