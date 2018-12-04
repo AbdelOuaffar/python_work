@@ -1,7 +1,0 @@
-Category,ProductId,ProductName,Price,QuantityOnHand
-Electronic,E1,IPad,134.00,45
-Electronic,E2,Iphone,650.00,15
-kitchen,k1,stove,450.00,20
-kitchen,k2,microwave,120.00,17
-Electronic,E3,Television,350.00,5
-Kitchen,K3,dishwasher,530.00,10
