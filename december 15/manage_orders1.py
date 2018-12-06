@@ -101,11 +101,10 @@ def parse_orders_file():
 def parse_by_category(products):
 
     file_by_category = []
-
-    search_category = ["kitchen", "Electronic"]
+    search_category = ["Kitchen", "Electronic", "Office", "Home decors"]
     for category in search_category:
         for product in products:
-            if product.category == category:
+            if product.category.upper() == category.upper():
                 file_by_category += [[product.category, product.product_id, product.product_name, product.price,
                                       product.quantity_on_hand]]
     return file_by_category
@@ -114,7 +113,7 @@ def parse_by_category(products):
 def search_product_by_name(product_name, products):
 
     for product in products:
-        if product.product_name == product_name:
+        if product.product_name.upper() == product_name.upper():
             print(product.product_name, product.category, product.price, product.quantity_on_hand)
             return
 
@@ -134,7 +133,7 @@ def search(key_search, orders, order, products):
                 for element in category:
                     print(element)
             elif key_search == 2:
-                product_id = input("enter product id :E1,K1,E2,K2,H1,O1:")
+                product_id = input("enter product id :E1,E2,E3,E4,E5,K1,K2,K3,K4,K5,O1,O2,H1:")
                 keys = orders.keys()
                 for key in orders:
                     if product_id not in keys:
@@ -175,7 +174,7 @@ def search(key_search, orders, order, products):
 def main():
     try:
         if len(sys.argv) != 3:
-            print("only three argument in this program : manage_orders1.py orders.txt products.txt")
+            print("exactly three argument needed in this program : manage_orders1.py orders.txt products.txt")
             return
         file1 = sys.argv[1]
         file2 = sys.argv[2]

@@ -1,12 +1,14 @@
 Category,ProductId,ProductName,Price,QuantityOnHand
 Electronic,E1,IPad,134.00,450
-Electronic,K2,projector,345.00,120
+Electronic,E4,projector,345.00,120
 Electronic,E2,Iphone,650.00,150
-kitchen,k1,stove,450.00,200
-kitchen,k2,microwave,120.00,170
+Kitchen,k1,stove,450.00,200
+Kitchen,k2,microwave,120.00,170
 Electronic,E3,Television,350.00,500
 Kitchen,K3,dishwasher,530.00,100
-Electronic,E3,remote controle,12.00,50
+Electronic,E5,remote controle,12.00,50
 Kitchen,K4,fridge,756.99,12
 Office,O1,Desk,250.99,12
 Home decors,H1,Frame,12.00,150
+office,O2,book Shelves,299.99,20
+kitchen,K5,robot,123.22,123
