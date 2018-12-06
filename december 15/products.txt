@@ -8,3 +8,5 @@ Electronic,E3,Television,350.00,500
 Kitchen,K3,dishwasher,530.00,100
 Electronic,E3,remote controle,12.00,50
 Kitchen,K4,fridge,756.99,12
+Office,O1,Desk,250.99,12
+Home decors,H1,Frame,12.00,150

@@ -76,6 +76,7 @@ def orders_two_dates(date1, date2, order):
             order_date1 = date.strptime(element.order_date, '%y/%m/%d')
             if start_date <= order_date1 <= end_date:
                 order_start_end += [element]
+
     return order_start_end
 
 
@@ -118,7 +119,14 @@ def search_product_by_name(product_name, products):
             return
 
 
-def search(key_search, orders, order, products, orders1=0):
+def product_id_product_name(products, product_id):
+    product = products
+    for element in product:
+        if element.product_id == product_id:
+            return element.product_name
+
+
+def search(key_search, orders, order, products):
 
         while key_search != 0:
             if key_search == 1:
@@ -126,10 +134,16 @@ def search(key_search, orders, order, products, orders1=0):
                 for element in category:
                     print(element)
             elif key_search == 2:
-                product_id = input("enter product id :E1,K1,E2,K2, O1:")
+                product_id = input("enter product id :E1,K1,E2,K2,H1,O1:")
+                keys = orders.keys()
                 for key in orders:
-                    if key == product_id:
-                        print(orders[key])
+                    if product_id not in keys:
+                        print("no orders for this product")
+
+                    elif key == product_id:
+                        product_name = product_id_product_name(products, product_id)
+                        print(product_name)
+                        [print(item) for item in orders[key]]
 
             elif key_search == 3:
                 product_name = input("enter product name  :")
@@ -141,10 +155,15 @@ def search(key_search, orders, order, products, orders1=0):
                 end_date = input("enter end search date as(yy/mm/dd) :")
                 if start_date <= end_date:
                     result = orders_two_dates(start_date, end_date, order)
-                    print(result)
+                    print("Dates"+"\t"+"Product_Id"+"\t"+"Order_Id"+"\t "+"Quantity_Ordered")
+                    [print(element.order_date + "\t  " + element.product_id+"\t   " + element.order_id + "\t        "
+                                              + element.quantity_ordered) for element in result]
+
                 else:
                     result = orders_two_dates(end_date, start_date, order)
-                    print(result)
+                    print("Dates"+"\t  "+"Product_Id"+"\t   "+"Order_Id"+"\t "+"Quantity_Ordered")
+                    [print(element.order_date + "\t  " + element.product_id + "\t  " + element.order_id + "\t     "
+                                              + element.quantity_ordered) for element in result]
 
             key_search = int(input("  enter   0: quit \n"
                                    "          1: to list product by category\n"
@@ -155,20 +174,17 @@ def search(key_search, orders, order, products, orders1=0):
 
 def main():
     try:
-
         if len(sys.argv) != 3:
-            print('Need only 3 argument:(manage_orders1.py  orders.txt  products.txt )for this program')
-        return
-    except UserWarning:
-        print("exceeded number of arguments", file=sys.stderr)
+            print("only three argument in this program : manage_orders1.py orders.txt products.txt")
+            return
         file1 = sys.argv[1]
         file2 = sys.argv[2]
-        # list of class objects
+        # list of class Orders  objects
         order = orders_file(file1)
-        # making a dictionary using order(list of class objects
+        # making a dictionary using order(list of class objects)product_id is the key
         orders = order_file_dictionary(order)
         products = parse_product_file(file2)
-        # dictionary from orders.txt
+        # dictionary from orders.txt(order_id is the key)
         orders1 = parse_orders_file()
 
         key_search = int(input("enter 1:to list product by category\n"
@@ -176,6 +192,9 @@ def main():
                                "      3:search product by name \n "
                                "      4:to see orders between a specific date range :\n"))
         search(key_search, orders, order, products)
+
+    except NameError:
+        print("argument entry errors", file=sys.stderr)
 
 
 if __name__ == "__main__":
