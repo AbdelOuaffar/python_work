@@ -1,14 +1,6 @@
 import sys
 from datetime import datetime as date
-
-
-class Product:
-    def __init__(self, category, product_id, product_name, price, quantity_on_hand):
-        self.category = category
-        self.product_id = product_id
-        self.product_name = product_name
-        self.price = price
-        self.quantity_on_hand = quantity_on_hand
+import ord
 
 
 class Orders:
@@ -21,17 +13,6 @@ class Orders:
     def parse_order_date(self, date1):
         self.order_date = date.strptime(date1, '%y/%m/%d')
         return date1
-
-
-def parse_product_file(file2):
-    file = open(file2)
-    products_from_class = []
-    file.readline()
-    for line in file:
-        newline = line.split(",")
-        products_from_class.append(Product(newline[0], newline[1], newline[2], newline[3], newline[4]))
-    file.close()
-    return products_from_class
 
 
 def orders_file(file1):
@@ -128,21 +109,24 @@ def product_id_product_name(products, product_id):
 def search(key_search, orders, order, products):
 
         while key_search != 0:
+
             if key_search == 1:
-                category = parse_by_category(products)
+                category = ord.parse_by_category(products)
                 for element in category:
                     print(element)
             elif key_search == 2:
                 product_id = input("enter product id :E1,E2,E3,E4,E5,K1,K2,K3,K4,K5,O1,O2,H1:")
                 keys = orders.keys()
-                for key in orders:
-                    if product_id not in keys:
+                if product_id not in keys:
                         print("no orders for this product")
 
-                    elif key == product_id:
+                else:
+
+                    for key in orders:
                         product_name = product_id_product_name(products, product_id)
-                        print(product_name)
-                        [print(item) for item in orders[key]]
+                        if product_id == key:
+                            print(product_name)
+                            [print(item) for item in orders[key]]
 
             elif key_search == 3:
                 product_name = input("enter product name  :")
@@ -182,7 +166,7 @@ def main():
         order = orders_file(file1)
         # making a dictionary using order(list of class objects)product_id is the key
         orders = order_file_dictionary(order)
-        products = parse_product_file(file2)
+        products = ord.parse_product_file(file2)
         # dictionary from orders.txt(order_id is the key)
         orders1 = parse_orders_file()
 
