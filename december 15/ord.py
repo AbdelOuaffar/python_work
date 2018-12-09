@@ -28,3 +28,18 @@ def parse_by_category(products):
                 file_by_category += [[product.category, product.product_id, product.product_name, product.price,
                                       product.quantity_on_hand]]
     return file_by_category
+
+
+def search_product_by_name(product_name, products):
+
+    for product in products:
+        if product.product_name.upper() == product_name.upper():
+            print(product.product_name, product.category, product.price, product.quantity_on_hand)
+            return
+
+
+def product_id_product_name(products, product_id):
+    product = products
+    for element in product:
+        if element.product_id == product_id:
+            return element.product_name
